@@ -412,7 +412,7 @@
                         </div>
                         <div>
                             <h4 class="font-bold mb-1">Adresse</h4>
-                            <p class="text-gray-600">12 Rue des Jardins, 75000 Paris</p>
+                            <p class="text-gray-600">1 Pl. Abbé Pierre, 69540 Irigny</p>
                         </div>
                     </div>
                     
@@ -422,7 +422,7 @@
                         </div>
                         <div>
                             <h4 class="font-bold mb-1">Téléphone</h4>
-                            <p class="text-gray-600">01 23 45 67 89</p>
+                            <p class="text-gray-600">04 78 46 33 93</p>
                         </div>
                     </div>
                     
@@ -442,8 +442,9 @@
                         </div>
                         <div>
                             <h4 class="font-bold mb-1">Horaires</h4>
-                            <p class="text-gray-600">Lundi - Samedi : 9h - 19h</p>
-                            <p class="text-gray-600">Dimanche : 10h - 14h</p>
+                            <p class="text-gray-600">Mardi - Vendredi : 8h30 - 12h30 / 14h30 - 19h00</p>
+                            <p class="text-gray-600">Samedi : 8h00 - 12h30 / 15h00 - 19h30</p>
+                            <p class="text-gray-600">Dimanche : 8h30 - 12h30</p>
                         </div>
                     </div>
                     
