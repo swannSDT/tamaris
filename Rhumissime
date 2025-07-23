@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rhumissime - Rhum arrangé maison de Fabrice</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap');
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+        }
+        
+        .product-card:hover .fruit-bg {
+            opacity: 0.2;
+        }
+        .fruit-bg {
+            transition: opacity 0.5s ease;
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+            filter: grayscale(80%);
+        }
+        .bottle-img {
+            position: relative;
+            z-index: 1;
+            transition: all 0.5s ease;
+        }
+        .product-card:hover .bottle-img {
+            transform: scale(1.05);
+            filter: drop-shadow(0 10px 8px rgba(0,0,0,0.1));
+        }
+        .nav-link {
+            position: relative;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -2px;
+            left: 0;
+            background-color: #8B5A2B;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="bg-[url('https://images.unsplash.com/photo-1601662528567-526cd07f5852?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')] bg-cover bg-fixed font-sans text-amber-800">
+<div class="bg-amber-50/80 backdrop-blur-sm">
+    <!-- Header -->
+    <header class="bg-white text-gray-900 shadow-sm">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center mb-4 md:mb-0">
+                    <h1 class="text-2xl md:text-3xl font-bold tracking-tight">RHUMISSIME</h1>
+                </div>
+                <nav class="flex space-x-6">
+                    <a href="#accueil" class="nav-link text-amber-800 hover:text-amber-900">Accueil</a>
+                    <a href="#produits" class="nav-link text-amber-800 hover:text-amber-900">Nos rhums</a>
+                    <a href="#commander" class="nav-link text-amber-800 hover:text-amber-900">Commander</a>
+                    <a href="#apropos" class="nav-link text-amber-800 hover:text-amber-900">À propos</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div class="h-2 bg-gradient-to-r from-amber-800 via-amber-600 to-amber-800"></div>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="relative py-32 bg-gray-900 text-white overflow-hidden">
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1601662528567-526cd07f5852?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')] bg-cover bg-center opacity-30"></div>
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-12 md:mb-0 relative">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">L'artisanat du rhum arrangé</h2>
+                <p class="text-lg mb-8 text-gray-300 leading-relaxed">Fabriqué avec passion par Fabrice, chaque bouteille est le fruit d'un savoir-faire unique et d'une sélection rigoureuse des meilleurs ingrédients.</p>
+                <a href="#produits" class="inline-block px-8 py-3 bg-transparent border-2 border-white text-white font-medium hover:bg-white hover:text-gray-900 transition duration-300">Découvrir nos créations</a>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <img src="https://images.unsplash.com/photo-1554866585-cd3f915a19d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=640&q=80" alt="Bouteilles de rhum" class="rounded-lg max-w-full h-auto max-h-96 shadow-2xl">
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="produits" class="py-16 bg-amber-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Nos créations artisanales</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Product 1 -->
+                <div class="product-card bg-white rounded-none shadow-sm overflow-hidden hover:shadow-md transition duration-500 p-8 relative border-b-2 border-transparent hover:border-amber-800">
+                    <div class="absolute inset-0 bg-amber-50 opacity-0 group-hover:opacity-100 transition duration-500"></div>
+                    <img src="https://images.unsplash.com/photo-1614314107767-681e16a18419?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Banane Passion" class="fruit-bg">
+                    <div class="flex flex-col items-center">
+                        <img src="https://images.unsplash.com/photo-1607522370275-f0e82a0a0e54?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Bouteille Banane Passion" class="bottle-img h-48 mb-4">
+                        <h3 class="text-xl font-semibold mb-2">Banane Passion</h3>
+                        <p class="text-amber-700 text-center mb-4">Un mélange équilibré entre la douceur de la banane et l'acidulé du fruit de la passion.</p>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="product-card bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition duration-300 p-6 relative">
+                    <img src="https://images.unsplash.com/photo-1573246123716-6b1786bfd0e9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Vanille Épicée" class="fruit-bg">
+                    <div class="flex flex-col items-center">
+                        <img src="https://images.unsplash.com/photo-1607522370275-f0e82a0a0e54?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Bouteille Vanille Épicée" class="bottle-img h-48 mb-4">
+                        <h3 class="text-xl font-semibold mb-2">Vanille Épicée</h3>
+                        <p class="text-amber-700 text-center mb-4">La douceur de la vanille mariée à des épices chaudes pour un rhum réconfortant.</p>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="product-card bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition duration-300 p-6 relative">
+                    <img src="https://images.unsplash.com/photo-1559181567-c5190bce8390?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Ananas Gingembre" class="fruit-bg">
+                    <div class="flex flex-col items-center">
+                        <img src="https://images.unsplash.com/photo-1607522370275-f0e82a0a0e54?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Bouteille Ananas Gingembre" class="bottle-img h-48 mb-4">
+                        <h3 class="text-xl font-semibold mb-2">Ananas Gingembre</h3>
+                        <p class="text-amber-700 text-center mb-4">La fraîcheur de l'ananas relevée par la pointe de gingembre pour un rhum tonique.</p>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="product-card bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition duration-300 p-6 relative">
+                    <img src="https://images.unsplash.com/photo-1550258987-190a2d41a8ba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Mangue Piment" class="fruit-bg">
+                    <div class="flex flex-col items-center">
+                        <img src="https://images.unsplash.com/photo-1607522370275-f0e82a0a0e54?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Bouteille Mangue Piment" class="bottle-img h-48 mb-4">
+                        <h3 class="text-xl font-semibold mb-2">Mangue Piment</h3>
+                        <p class="text-amber-700 text-center mb-4">L'exotisme de la mangue avec une touche de piment pour un rhum qui surprend.</p>
+                    </div>
+                </div>
+                
+                <!-- Product 5 -->
+                <div class="product-card bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition duration-300 p-6 relative">
+                    <img src="https://images.unsplash.com/photo-1589927986089-35812388d1b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Citron Vert Menthe" class="fruit-bg">
+                    <div class="flex flex-col items-center">
+                        <img src="https://images.unsplash.com/photo-1607522370275-f0e82a0a0e54?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Bouteille Citron Vert Menthe" class="bottle-img h-48 mb-4">
+                        <h3 class="text-xl font-semibold mb-2">Citron Vert Menthe</h3>
+                        <p class="text-amber-700 text-center mb-4">Fraîcheur garantie avec ce mélange de citron vert et de menthe pour un rhum estival.</p>
+                    </div>
+                </div>
+                
+                <!-- Product 6 -->
+                <div class="product-card bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition duration-300 p-6 relative">
+                    <img src="https://images.unsplash.com/photo-1603569283847-aa6a0c0c9c00?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Coco Passion" class="fruit-bg">
+                    <div class="flex flex-col items-center">
+                        <img src="https://images.unsplash.com/photo-1607522370275-f0e82a0a0e54?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Bouteille Coco Passion" class="bottle-img h-48 mb-4">
+                        <h3 class="text-xl font-semibold mb-2">Coco Passion</h3>
+                        <p class="text-amber-700 text-center mb-4">L'onctuosité de la noix de coco mariée à l'acidulé du fruit de la passion.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Section -->
+    <section id="commander" class="py-16 bg-amber-100">
+        <div class="container mx-auto px-4 max-w-3xl">
+            <h2 class="text-3xl font-bold text-center mb-8">Passer commande</h2>
+            
+            <form id="order-form" class="bg-white rounded-none shadow-none p-8 md:p-10 border-t-2 border-amber-800">
+                <div class="text-center mb-10">
+                    <h3 class="text-2xl font-bold text-gray-900 uppercase tracking-wider">Formulaire de commande</h3>
+                    <p class="text-gray-600 mt-2 text-sm tracking-wide">Remplissez ce formulaire et nous vous recontacterons rapidement</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label for="lastname" class="block text-amber-800 mb-2">Nom</label>
+                        <input type="text" id="lastname" name="lastname" required class="w-full px-4 py-2 border border-amber-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500">
+                    </div>
+                    <div>
+                        <label for="firstname" class="block text-amber-800 mb-2">Prénom</label>
+                        <input type="text" id="firstname" name="firstname" required class="w-full px-4 py-2 border border-amber-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500">
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label for="email" class="block text-amber-800 mb-2">Email</label>
+                        <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-amber-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500">
+                    </div>
+                    <div>
+                        <label for="phone" class="block text-amber-800 mb-2">Téléphone</label>
+                        <input type="tel" id="phone" name="phone" required class="w-full px-4 py-2 border border-amber-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500">
+                    </div>
+                </div>
+                
+                <div class="mb-6">
+                    <label for="rhum" class="block text-amber-800 mb-2">Choix du rhum</label>
+                    <select id="rhum" name="rhum" required class="w-full px-4 py-2 border border-amber-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500">
+                        <option value="" disabled selected>Sélectionnez un rhum</option>
+                        <option value="Banane Passion">Banane Passion</option>
+                        <option value="Vanille Épicée">Vanille Épicée</option>
+                        <option value="Ananas Gingembre">Ananas Gingembre</option>
+                        <option value="Mangue Piment">Mangue Piment</option>
+                        <option value="Citron Vert Menthe">Citron Vert Menthe</option>
+                        <option value="Coco Passion">Coco Passion</option>
+                    </select>
+                </div>
+                
+                <div class="mb-6">
+                    <label for="quantity" class="block text-amber-800 mb-2">Quantité</label>
+                    <input type="number" id="quantity" name="quantity" min="1" value="1" required class="w-full px-4 py-2 border border-amber-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500">
+                </div>
+                
+                <div class="mb-6">
+                    <label for="message" class="block text-amber-800 mb-2">Message (optionnel)</label>
+                    <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 border border-amber-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"></textarea>
+                </div>
+                
+                <button type="submit" class="w-full bg-amber-600 text-white py-3 px-6 rounded-lg font-medium hover:bg-amber-700 transition duration-300">
+                    Envoyer la commande
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="apropos" class="py-16 bg-amber-50">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <h2 class="text-3xl font-bold text-center mb-8">L'histoire de Fabrice</h2>
+            
+            <div class="bg-white rounded-lg shadow-md p-6 md:p-8">
+                <div class="flex flex-col md:flex-row items-center mb-8">
+                    <img src="https://images.unsplash.com/photo-1583864697781-a9e6b061d41c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Fabrice" class="rounded-full w-32 h-32 object-cover mb-4 md:mb-0 md:mr-8 border-4 border-amber-200">
+                    <div>
+                        <h3 class="text-2xl font-semibold text-amber-800">Fabrice, artisan passionné</h3>
+                        <p class="text-amber-600">Créateur de Rhumissime</p>
+                    </div>
+                </div>
+                
+                <div class="space-y-4 text-amber-800">
+                    <p>Tout a commencé il y a 10 ans lors d'un voyage aux Antilles. Fabrice a découvert l'art du rhum arrangé et est tombé amoureux de cette tradition qui mêle savoir-faire et créativité.</p>
+                    
+                    <p>De retour en France, il a commencé à expérimenter dans sa cuisine, testant des mélanges de fruits, d'épices et de rhum. Ce qui n'était au départ qu'un passe-temps est rapidement devenu une passion dévorante.</p>
+                    
+                    <p>Après des années de perfectionnement et de partage avec ses proches, Fabrice a décidé de faire profiter un plus large public de ses créations. C'est ainsi qu'est né Rhumissime.</p>
+                    
+                    <p>Aujourd'hui, chaque bouteille est préparée avec le même soin et la même passion qu'au premier jour. Fabrice sélectionne personnellement les ingrédients, souvent locaux, pour garantir des saveurs authentiques et une qualité irréprochable.</p>
+                    
+                    <p>"Le rhum arrangé, c'est comme une bonne cuisine : ça se partage, ça réchauffe les cœurs et ça crée des souvenirs" aime-t-il à répéter.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 bg-amber-100/80">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Ils ont aimé nos rhums</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white/90 p-6 rounded-xl shadow-lg border border-amber-200">
+                    <div class="flex items-center mb-4">
+                        <div class="text-amber-500 text-2xl mr-2">★★★★★</div>
+                    </div>
+                    <p class="text-amber-800 mb-4">"Le rhum Banane Passion est une révélation ! Le parfait équilibre entre douceur et acidité."</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Marie" class="w-10 h-10 rounded-full mr-3">
+                        <div>
+                            <p class="font-medium text-amber-900">Marie L.</p>
+                            <p class="text-sm text-amber-600">Client depuis 2021</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white/90 p-6 rounded-xl shadow-lg border border-amber-200">
+                    <div class="flex items-center mb-4">
+                        <div class="text-amber-500 text-2xl mr-2">★★★★★</div>
+                    </div>
+                    <p class="text-amber-800 mb-4">"La Vanille Épicée réchauffe les soirées d'hiver. Un must-have !"</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Pierre" class="w-10 h-10 rounded-full mr-3">
+                        <div>
+                            <p class="font-medium text-amber-900">Pierre D.</p>
+                            <p class="text-sm text-amber-600">Client depuis 2022</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white/90 p-6 rounded-xl shadow-lg border border-amber-200">
+                    <div class="flex items-center mb-4">
+                        <div class="text-amber-500 text-2xl mr-2">★★★★☆</div>
+                    </div>
+                    <p class="text-amber-800 mb-4">"Original et surprenant, le Mangue Piment est mon préféré pour l'apéritif."</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Sophie" class="w-10 h-10 rounded-full mr-3">
+                        <div>
+                            <p class="font-medium text-amber-900">Sophie T.</p>
+                            <p class="text-sm text-amber-600">Nouvelle cliente</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-amber-900 text-amber-100 py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <h3 class="text-xl font-bold mb-2">Rhumissime</h3>
+                    <p class="text-amber-300">Rhum arrangé maison de Fabrice</p>
+                </div>
+                
+                <div class="flex flex-col items-center md:items-end">
+                    <div class="flex space-x-4 mb-4">
+                        <a href="#" class="text-amber-100 hover:text-amber-50"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-amber-100 hover:text-amber-50"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <div class="text-sm">
+                        <a href="#" class="text-amber-300 hover:text-amber-50 mr-4">Mentions légales</a>
+                        <a href="#" class="text-amber-300 hover:text-amber-50">Politique de confidentialité</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-amber-800 mt-6 pt-6 text-center text-sm text-amber-400">
+                <p>© 2023 Rhumissime - Tous droits réservés</p>
+                <p class="mt-1">L'abus d'alcool est dangereux pour la santé, à consommer avec modération</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Form submission handling
+        document.getElementById('order-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const formData = {
+                lastname: document.getElementById('lastname').value,
+                firstname: document.getElementById('firstname').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                rhum: document.getElementById('rhum').value,
+                quantity: document.getElementById('quantity').value,
+                message: document.getElementById('message').value
+            };
+            
+            // Here you would normally send the data to a server
+            console.log('Form submitted:', formData);
+            
+            // Show success message
+            alert('Merci pour votre commande ! Nous vous contacterons rapidement par email pour finaliser votre demande.');
+            
+            // Reset form
+            this.reset();
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</div>
+</body>
+</html>
